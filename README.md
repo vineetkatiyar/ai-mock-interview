@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎙️ Mock Interview Preparation App
 
-## Getting Started
+🚀 **An AI-powered mock interview assistant** that helps job seekers practice and improve their interview skills. This app simulates real interviews using AI-generated questions and responses.
 
-First, run the development server:
+## 📌 Features
+
+✅ **AI-Generated Questions** – Uses **Google Gemini** to create realistic interview questions.
+✅ **Structured Practice** – Stores questions in **Firebase** for organized mock interviews.
+✅ **AI-Powered Interviewer** – Utilizes **Vapi AI Assistant** to simulate recruiter interactions.
+✅ **Full-Stack Application** – Built with **Next.js 15** for a fast and interactive experience.
+
+## 🔧 Tech Stack
+
+- **Frontend:** Next.js 15, React
+- **Style:** Shadcn UI and TailwindCSS
+- **Backend:** Firebase
+- **AI Integration:** Google Gemini, Vapi AI Assistant
+- **Hosting:** Vercel
+
+## 🎯 Why I Built This
+
+Interview preparation can be challenging, and practicing alone isn’t always effective. This app provides a **realistic interview simulation**, helping users gain confidence and improve their responses in a structured manner.
+
+## 🚀 Live Demo & Repository
+
+🔗 **Live App:** [https://ai-mock-interview-omega-black.vercel.app/](#)  
+💻 **GitHub Repository:** [https://github.com/vineetkatiyar/ai-mock-interview](#)
+
+## 📸 Screenshots
+
+![App Screenshot](public/assets/ss.png)
+
+## 🛠️ Installation & Setup
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/mock-interview-app.git
+cd mock-interview-app
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Future Enhancements
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Personalized interview feedback**
+- **Two types of interview categorie** (Tech, Behavioral, etc.)
+- **Speech-to-text support** for real-time voice interaction
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤝 Contributions & Feedback
 
-## Learn More
+I’d love to hear your thoughts and suggestions! Feel free to open issues, contribute, or reach out to me on [https://www.linkedin.com/in/vineetkatiyar98](#).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📌 **Developed by:** [Vineet Katiyar](#)  
+📩 **Contact:** [vineetkatiyar98@gmail.com](#)  
+🌐 **Portfolio:** [https://portfolio-vineetkatiyar.vercel.app](#)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#AI #MockInterview #NextJS #Firebase #VapiAI #GoogleGemini
