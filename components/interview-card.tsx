@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Calculator, Star } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { Feedback, InterviewCardProps } from "@/types";
+// import { Feedback, InterviewCardProps } from ";
 import DisplayTechIcons from "./display-tech-icons";
 
 const InterviewCard = ({

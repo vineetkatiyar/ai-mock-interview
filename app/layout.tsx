@@ -3,7 +3,7 @@ import { Mona_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "next-themes";
-import Navbar from "@/components/navbar";
+
 
 const monaSans = Mona_Sans({
   variable: "--font-mona-sans",
@@ -29,9 +29,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar/>
           {children}
-
           <Toaster />
         </ThemeProvider>
       </body>

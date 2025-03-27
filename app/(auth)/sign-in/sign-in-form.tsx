@@ -18,7 +18,7 @@ import Link from "next/link";
 import { toast } from "sonner";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase/client";
-import { SignIn } from "@/lib/actions/auth.actions";
+import { signIn } from "@/lib/actions/auth.actions";
 
 const formSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -55,7 +55,7 @@ export function SignInForm() {
         return;
       }
 
-      await SignIn({
+      await signIn({
         email,
         idToken,
       });
@@ -69,14 +69,14 @@ export function SignInForm() {
 
   return (
     <div className="w-full flex flex-col items-center justify-center h-screen space-y-5">
-      <div className="w-full max-w-sm p-4 bg-white rounded-lg shadow-lg space-y-6">
+      <div className="w-full max-w-sm p-4 rounded-lg shadow-lg space-y-6 border">
         <div className="space-y-4 text-center">
           <h1 className="text-2xl font-bold text-cyan-700 underline">MPREP</h1>
           <h3 className="text-xl">Login</h3>
         </div>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 ">
             <FormField
               control={form.control}
               name="email"

@@ -67,9 +67,20 @@ export async function createFeedback(params: CreateFeedbackParams) {
 }
 
 export async function getInterviewById(id: string): Promise<Interview | null> {
-  const interview = await db.collection("interviews").doc(id).get();
+  try {
+    const docRef = db.collection("interviews").doc(id);
+    const docSnap = await docRef.get();
 
-  return interview.data() as Interview | null;
+    if (!docSnap.exists) {
+      console.warn(`Interview with ID ${id} not found.`);
+      return null;
+    }
+
+    return docSnap.data() as Interview;
+  } catch (error) {
+    console.error("Error fetching interview:", error);
+    return null;
+  }
 }
 
 export async function getFeedbackByInterviewId(

@@ -13,6 +13,5 @@ export default async function AuthLayout({
     redirect("/");
   }
 
-  return;
-  <div>{children}</div>;
+  return <div>{children}</div>;
 }

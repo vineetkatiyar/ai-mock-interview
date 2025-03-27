@@ -3,7 +3,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -70,7 +69,7 @@ export function SignUpForm() {
 
   return (
     <div className="w-full flex flex-col items-center justify-center h-screen space-y-5">
-      <div className="w-full max-w-sm p-4 bg-white rounded-lg shadow-lg space-y-6">
+      <div className="w-full max-w-sm p-4  rounded-lg shadow-lg space-y-6 border">
         <div className="space-y-4 text-center">
           <h1 className="text-2xl font-bold text-cyan-700 underline">MPREP</h1>
           <h3 className="text-xl">Register</h3>

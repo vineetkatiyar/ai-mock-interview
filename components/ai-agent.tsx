@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { vapi } from "@/lib/vapi.sdk";
 import { interviewer } from "@/constants";
 import { createFeedback } from "@/lib/actions/general.action";
+import { Speaker } from "lucide-react";
 
 enum CallStatus {
   INACTIVE = "INACTIVE",
@@ -147,77 +148,66 @@ const Agent = ({
 
   return (
     <>
-      <>
-      <div className="call-view flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-6 p-6 text-white">
-    {/* AI Interviewer Card */}
-    <div className="card-interviewer bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col items-center w-72">
-      <div className="avatar relative flex items-center justify-center size-[120px] rounded-full bg-gradient-to-r from-blue-500 to-purple-600">
-        <Image
-          src="/ai-avatar.png"
-          alt="profile-image"
-          width={65}
-          height={54}
-          className="object-cover"
-        />
-        {isSpeaking && (
-          <span className="absolute inline-flex size-5/6 animate-ping rounded-full bg-primary-200 opacity-75" />
-        )}
-      </div>
-      <h3 className="mt-4 text-lg font-semibold">AI Interviewer</h3>
-    </div>
+      <div className="flex flex-wrap justify-center gap-6 p-6">
+        {/* AI Interviewer Card */}
+        <div className="w-[300px] max-sm:w-full min-h-80 rounded-3xl p-5 border border-gray-300 flex flex-col gap-6 justify-center items-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="flex flex-col items-center gap-2 relative">
+            {/* Animated Speaker Icon */}
+            <div className={isSpeaking ? "animate-ping absolute" : ""}>
+              <Speaker
+                size={100}
+                className="text-gray-700 dark:text-gray-300"
+              />
+            </div>
+            {/* Static Speaker Icon to prevent full disappearance */}
+          </div>
+          <h3 className="text-lg font-semibold">AI Interviewer</h3>
+        </div>
 
-    {/* User Profile Card */}
-    <div className="card-border bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col items-center w-72">
-      <div className="card-content flex flex-col items-center">
-        <Image
-          src="/user-avatar.png"
-          alt="profile-image"
-          width={120}
-          height={120}
-          className="rounded-full object-cover"
-        />
-        <h3 className="mt-4 text-lg font-semibold">{userName}</h3>
+        {/* User Profile Card */}
+        <div className="w-[300px] max-sm:w-full min-h-80 rounded-3xl p-5 border border-gray-300 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="flex justify-center items-center flex-col">
+            <Image
+              src="/user-avatar.png"
+              alt="profile-image"
+              width={539}
+              height={539}
+              className="rounded-full object-cover size-[120px]"
+            />
+            <h3 className="mt-3 text-lg font-semibold">{userName}</h3>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-      </>
+
       {messages.length > 0 && (
-        <div className="transcript-border w-full flex justify-center mt-6">
-          <div className="transcript bg-gray-800 p-4 rounded-lg shadow-md max-w-xl border border-gray-700 text-white text-center">
-            <p
-              key={lastMessage}
-              className={cn(
-                "transition-opacity duration-500 opacity-0",
-                "animate-fadeIn opacity-100"
-              )}
-            >
+        <div className="borderborder-gray-300 dark:border-gray-700 p-4 rounded-lg shadow-md ">
+          <div className="animate-fadeIn opacity-100 transition-opacity duration-500">
+            <p key={lastMessage} className="">
               {lastMessage}
             </p>
           </div>
         </div>
       )}
 
-      <div className="w-full flex justify-center mt-6">
+      <div className="w-full flex justify-center">
         {callStatus !== "ACTIVE" ? (
-          <button
-            className="relative btn-call bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center"
-            onClick={() => handleCall()}
-          >
+          <button className="relative btn-call" onClick={() => handleCall()}>
             <span
               className={cn(
                 "absolute animate-ping rounded-full opacity-75",
                 callStatus !== "CONNECTING" && "hidden"
               )}
             />
-            <span className="relative text-lg font-semibold">
+
+            <div className="relative bg-green-400 h-10 w-20 flex justify-center items-center rounded-3xl cursor-pointer ">
               {callStatus === "INACTIVE" || callStatus === "FINISHED"
                 ? "Call"
                 : ". . ."}
-            </span>
+            </div>
           </button>
         ) : (
           <button
-            className="btn-disconnect bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-red-700 transition duration-300 text-lg font-semibold"
+            className="bg-red-600 h-10 w-20 flex justify-center items-center rounded-3xl cursor-pointer"
             onClick={() => handleDisconnect()}
           >
             End
